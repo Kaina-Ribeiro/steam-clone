@@ -1,21 +1,13 @@
-import GlobalStyle from '@/styles/globalstyles';
+import GlobalStyle from '@/styles/globalstyle';
+import { defaultTheme } from '@/styles/themes/default';
 import type { AppProps } from 'next/app';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
-
-const theme: DefaultTheme = {
-  colors: {
-    primary: '#111',
-    secondary: '#0070f3',
-  },
-};
+import { ThemeProvider } from 'styled-components';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
   );
 }
