@@ -1,13 +1,18 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
   "env": {
     "jest": true,
     "node": true,
     "browser": true
   },
+  "parser": "@typescript-eslint/parser",
 
   "root": true,
   "rules": {
-    "no-unused-vars": "warn"
-  }
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-empty-interface": "off"
+  },
+  "plugins": ["@typescript-eslint"]
 }

@@ -1,36 +1,42 @@
-import { Roboto } from 'next/font/google';
+import { Merriweather } from 'next/font/google';
 import { createGlobalStyle } from 'styled-components';
 
-const roboto = Roboto({
+const merriweather = Merriweather({
   weight: ['400', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
 });
 
 const GlobalStyle = createGlobalStyle`
-
 * {
   margin: 0;
   padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-family: ${merriweather.style.fontFamily}, sans-serif;
+}
+
+  :focus {
+    outline: 0;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
   }
 
   html,
   body {
-    color: ${({ theme }) => theme.colors.primary};
+    ul {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
-
-  body, input, textarea, button {
-    font-family: ${roboto.style.fontFamily};
-    font-weight: 400;
-    font-size: 1rem;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
 `;
 
 export default GlobalStyle;

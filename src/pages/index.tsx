@@ -1,9 +1,11 @@
-import Cards from '@/components/cards';
-import { CodeTag, Container, Description, Main, SuperDiv, Title } from '@/components/sharedstyes';
+import Layout from '@/components/Layout';
+import { CodeTag, Container, Description, Main, Title } from '@/components/sharedstyes';
+import type { NextPageWithLayout } from './_app';
 
 import Head from 'next/head';
+import { ReactElement } from 'react';
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   return (
     <Container>
       <Head>
@@ -20,9 +22,13 @@ export default function Home() {
           Get started by editing
           <CodeTag>pages/index.tsx</CodeTag>
         </Description>
-
-        <Cards />
       </Main>
     </Container>
   );
-}
+};
+
+Home.getLayout = (page: ReactElement) => {
+  return <Layout>{page}</Layout>;
+};
+
+export default Home;
