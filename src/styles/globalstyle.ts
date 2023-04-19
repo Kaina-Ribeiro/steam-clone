@@ -10,10 +10,10 @@ const merriweather = Merriweather({
 const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: 0;
   border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
   font-family: ${merriweather.style.fontFamily}, sans-serif;
 }
 
@@ -23,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body,
-  #root {
-    height: 100%;
+  #__next {
+    overflow: hidden;
   }
 
   html,
@@ -33,8 +33,8 @@ const GlobalStyle = createGlobalStyle`
       list-style-type: none;
     }
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
   }
 `;

@@ -1,15 +1,13 @@
 import { ReactNode } from 'react';
 
+import { Main } from '@/styles/sharedstyes';
+
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  return (
-    <>
-      <main>{children}</main>
-    </>
-  );
+  return <Main>{children}</Main>;
 };
 
 export default Layout;
